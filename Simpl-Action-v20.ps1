@@ -10,6 +10,7 @@
 # login1 - login of vSphere
 # $pass1 - password of vSphere
 # $s - the key for the Redfish session
+# $esxi1 - Simplivity node mgmt address (that ilo you connect)
 # $ovcilo1 - the OVC mgmt ip address
 #----------------- End-of-Varibles----
 #
@@ -17,6 +18,7 @@ $ilologin1="hpadmin"
 $ilopass1="Your secret password"
 $login1="administrator@vsphere.local"
 $pass1="Your secret password"
+$esxi1="s-esxi-01.newsynergy.local"
 $ovcilo1="192.168.1.140"
 #
 $s=Connect-HPERedfish -Address 16.52.177.13 -Username $ilologin1 -Password $ilopass1 -DisableCertificateAuthentication
@@ -42,7 +44,7 @@ do
             write-host -foreground Red "-------------------------------------------------------------"
             write-host -foreground Red "We get error...$IntName1 is down"
             write-host -foreground Red "-------------------------------------------------------------"
-            $VMS1=Get-VMHost -Name s-esxi-01.newsynergy.local | get-VM
+            $VMS1=Get-VMHost -Name $esxi1 | get-VM
             $VMS2=$VMS1.Count
             $VMS3=$VMS2-1
             for ($j=0;$j -lt $VMS3;$j++)
