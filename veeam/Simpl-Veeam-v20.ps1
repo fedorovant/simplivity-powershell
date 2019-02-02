@@ -2,6 +2,7 @@
 # This script define the cluster at vCenter, makes HPE SimpliVity backup, 
 # restore VMs at central cluster where Veeam can take it, send VMs list on Veeam job and start this job
 # This modified version of script taken from here: https://github.com/tbeha/SimpliVity-Powershell
+# You need this psm file wor script: https://github.com/tbeha/SimpliVity-Powershell/blob/master/OmniStackCmds.psm1
 # Thanks Thomas Beha for original script and idea
 #----Varibles---
 # $ovclogin1 - login to OVC and vCenter
